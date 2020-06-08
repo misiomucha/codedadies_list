@@ -1,11 +1,27 @@
-<!DOCTYPE html>
+
+
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Codedaddies list</title>
+    <title>Code daddies list</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
-<h2> Testing to see if it works!</h2>
+<nav>
+    <div class="container nav-wrapper">
+        <a href="/" class="brand-logo">Codedaddies List</a>
+        <ul id="nav-mobile" class="right">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </div>
+</nav>
 
 </body>
 </html>
