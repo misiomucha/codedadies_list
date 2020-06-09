@@ -1,5 +1,3 @@
-
-
 {% load static %}
 
 <html lang="en">
@@ -14,14 +12,15 @@
 
 </head>
 <body>
-<nav>
-    <div class="container nav-wrapper">
-        <a href="/" class="brand-logo">Codedaddies List</a>
-        <ul id="nav-mobile" class="right">
-            <li><a href="/">Home</a></li>
-        </ul>
-    </div>
-</nav>
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="/" class="brand-logo">Codedaddies List</a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <h1 style="text-align: center">What do you want to search for on Codedaddies List?</h1>
         <div class="row">
@@ -52,11 +51,19 @@
                 </div>
             </div>
         </div>
+
+        <form action="{% url 'new_search' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="search" placeholder="search">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+            </button>
+        </form>
+
+        {% block content %}
+
+        {% endblock content %}
     </div>
-
-    {% block content %}
-
-    {% endblock content %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
